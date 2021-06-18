@@ -21,7 +21,7 @@ public class TestThread {
     }
 
     static class Sum extends RecursiveTask<Long>{
-        int low, high;
+        int low, high, SEQUENTIAL_THRESHOLD = 1000;
         int [] array;
 
         public Sum(int[] array, int low, int high) {
@@ -30,9 +30,13 @@ public class TestThread {
             this.array = array;
         }
 
+        public static void printResults(String name, long timeInNanos, double sum){
+            System.out.printf(" %s completed in %8.3f milliseconds, with sum = %8.5f \n", name, timeInNanos / 1e6, sum);
+        }
+
         @Override
         protected Long compute() {
-            if (high - low <= 10){
+            if (high - low <= SEQUENTIAL_THRESHOLD){
                 long sum = 0;
 
                 for (int i = low; i < high; ++i){
