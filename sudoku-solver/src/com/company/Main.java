@@ -195,10 +195,16 @@ public class Main {
         System.out.println("Sudoku board initially:");
         print_initial(arr, arr.length);
         System.out.println("\n\n");
+
+        long start_time = System.nanoTime();
+
         boolean possible = obj.sudoku(arr);
         if (possible) {
             System.out.println("After solving:");
             print(arr, arr.length);
         }
+        long end_time = System.nanoTime();
+        long elapsed_time = end_time - start_time;
+        System.out.printf("Solution found in : %2.3f seconds.", (elapsed_time / (float)1e9));
     }
 }
