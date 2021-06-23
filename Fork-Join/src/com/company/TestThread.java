@@ -5,7 +5,7 @@ import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveTask;
 
 public class TestThread {
-    public static void main(String[] args) throws InterruptedException, ExecutionException {
+    public static void main(String[] args) throws InterruptedException {
         int nThreads = Runtime.getRuntime().availableProcessors();
         System.out.println(nThreads);
 
@@ -36,7 +36,7 @@ public class TestThread {
 
         @Override
         protected Long compute() {
-            if (high - low <= SEQUENTIAL_THRESHOLD){
+            if ((high - low) <= SEQUENTIAL_THRESHOLD){
                 long sum = 0;
 
                 for (int i = low; i < high; ++i){
