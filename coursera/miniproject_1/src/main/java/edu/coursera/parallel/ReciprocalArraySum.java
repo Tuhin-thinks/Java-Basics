@@ -128,7 +128,7 @@ public final class ReciprocalArraySum {
 
         @Override
         protected void compute() {
-            if ((endIndexExclusive - startIndexInclusive) < 1000){
+            if ((endIndexExclusive - startIndexInclusive) < 10000){
                 for (int i=startIndexInclusive; i<endIndexExclusive; i++){
                     value += 1/input[i];
                 }
@@ -160,6 +160,7 @@ public final class ReciprocalArraySum {
         int end = getChunkEndExclusive(0, 1, input.length);
 
         ReciprocalArraySumTask reciprocal_task = new ReciprocalArraySumTask(start, end, input);
+        System.setProperty("java.util.concurrent.ForkJoin.common.parallelism","4");
         ForkJoinPool.commonPool().invoke(reciprocal_task);
         return reciprocal_task.getValue();
     }

@@ -1,28 +1,70 @@
 -------------------------------------------------------------------------------
 Test set: edu.coursera.parallel.ReciprocalArraySumTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 54.084 sec <<< FAILURE! - in edu.coursera.parallel.ReciprocalArraySumTest
-testParSimpleTwoMillion(edu.coursera.parallel.ReciprocalArraySumTest)  Time elapsed: 0.304 sec  <<< FAILURE!
-junit.framework.AssertionFailedError: It was expected that the two-task parallel implementation would run at least 1.500000x faster, but it only achieved 1.000000x speedup
-	at junit.framework.Assert.fail(Assert.java:47)
-	at junit.framework.Assert.assertTrue(Assert.java:20)
-	at edu.coursera.parallel.ReciprocalArraySumTest.testParSimpleTwoMillion(ReciprocalArraySumTest.java:120)
+Tests run: 4, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 18.489 sec <<< FAILURE! - in edu.coursera.parallel.ReciprocalArraySumTest
+testParSimpleTwoMillion(edu.coursera.parallel.ReciprocalArraySumTest)  Time elapsed: 1.049 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class java.util.concurrent.locks.AbstractQueuedSynchronizer$ExclusiveNode
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.acquire(AbstractQueuedSynchronizer.java:694)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.acquire(AbstractQueuedSynchronizer.java:937)
+	at java.base/java.util.concurrent.locks.ReentrantLock$Sync.lock(ReentrantLock.java:153)
+	at java.base/java.util.concurrent.locks.ReentrantLock.lock(ReentrantLock.java:322)
+	at java.base/java.util.concurrent.ForkJoinTask.recordExceptionalCompletion(ForkJoinTask.java:479)
+	at java.base/java.util.concurrent.ForkJoinTask.setExceptionalCompletion(ForkJoinTask.java:507)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:298)
+	at java.base/java.util.concurrent.ForkJoinTask.tryExternalHelp(ForkJoinTask.java:386)
+	at java.base/java.util.concurrent.ForkJoinTask.externalAwaitDone(ForkJoinTask.java:328)
+	at java.base/java.util.concurrent.ForkJoinTask.doJoin(ForkJoinTask.java:403)
+	at java.base/java.util.concurrent.ForkJoinTask.join(ForkJoinTask.java:726)
+	at java.base/java.util.concurrent.ForkJoinPool.invoke(ForkJoinPool.java:2432)
+	at edu.coursera.parallel.ReciprocalArraySum.parArraySum(ReciprocalArraySum.java:164)
+	at edu.coursera.parallel.ReciprocalArraySumTest.parTestHelper(ReciprocalArraySumTest.java:77)
+	at edu.coursera.parallel.ReciprocalArraySumTest.testParSimpleTwoMillion(ReciprocalArraySumTest.java:117)
 
-testParSimpleTwoHundredMillion(edu.coursera.parallel.ReciprocalArraySumTest)  Time elapsed: 26.709 sec  <<< FAILURE!
-junit.framework.AssertionFailedError: It was expected that the two-task parallel implementation would run at least 1.500000x faster, but it only achieved 1.009950x speedup
-	at junit.framework.Assert.fail(Assert.java:47)
-	at junit.framework.Assert.assertTrue(Assert.java:20)
-	at edu.coursera.parallel.ReciprocalArraySumTest.testParSimpleTwoHundredMillion(ReciprocalArraySumTest.java:131)
+testParSimpleTwoHundredMillion(edu.coursera.parallel.ReciprocalArraySumTest)  Time elapsed: 8.16 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class java.util.concurrent.locks.AbstractQueuedSynchronizer$ExclusiveNode
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.acquire(AbstractQueuedSynchronizer.java:694)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.acquire(AbstractQueuedSynchronizer.java:937)
+	at java.base/java.util.concurrent.locks.ReentrantLock$Sync.lock(ReentrantLock.java:153)
+	at java.base/java.util.concurrent.locks.ReentrantLock.lock(ReentrantLock.java:322)
+	at java.base/java.util.concurrent.ForkJoinTask.recordExceptionalCompletion(ForkJoinTask.java:479)
+	at java.base/java.util.concurrent.ForkJoinTask.setExceptionalCompletion(ForkJoinTask.java:507)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:298)
+	at java.base/java.util.concurrent.ForkJoinTask.tryExternalHelp(ForkJoinTask.java:386)
+	at java.base/java.util.concurrent.ForkJoinTask.externalAwaitDone(ForkJoinTask.java:328)
+	at java.base/java.util.concurrent.ForkJoinTask.doJoin(ForkJoinTask.java:403)
+	at java.base/java.util.concurrent.ForkJoinTask.join(ForkJoinTask.java:726)
+	at java.base/java.util.concurrent.ForkJoinPool.invoke(ForkJoinPool.java:2432)
+	at edu.coursera.parallel.ReciprocalArraySum.parArraySum(ReciprocalArraySum.java:164)
+	at edu.coursera.parallel.ReciprocalArraySumTest.parTestHelper(ReciprocalArraySumTest.java:77)
+	at edu.coursera.parallel.ReciprocalArraySumTest.testParSimpleTwoHundredMillion(ReciprocalArraySumTest.java:127)
 
-testParManyTaskTwoMillion(edu.coursera.parallel.ReciprocalArraySumTest)  Time elapsed: 0.286 sec  <<< FAILURE!
-junit.framework.AssertionFailedError: It was expected that the many-task parallel implementation would run at least 4.800000x faster, but it only achieved 1.000000x speedup
-	at junit.framework.Assert.fail(Assert.java:47)
-	at junit.framework.Assert.assertTrue(Assert.java:20)
-	at edu.coursera.parallel.ReciprocalArraySumTest.testParManyTaskTwoMillion(ReciprocalArraySumTest.java:143)
+testParManyTaskTwoMillion(edu.coursera.parallel.ReciprocalArraySumTest)  Time elapsed: 1.895 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class java.util.concurrent.locks.AbstractQueuedSynchronizer$ExclusiveNode
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.acquire(AbstractQueuedSynchronizer.java:694)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.acquire(AbstractQueuedSynchronizer.java:937)
+	at java.base/java.util.concurrent.locks.ReentrantLock$Sync.lock(ReentrantLock.java:153)
+	at java.base/java.util.concurrent.locks.ReentrantLock.lock(ReentrantLock.java:322)
+	at java.base/java.util.concurrent.ForkJoinTask.recordExceptionalCompletion(ForkJoinTask.java:479)
+	at java.base/java.util.concurrent.ForkJoinTask.setExceptionalCompletion(ForkJoinTask.java:507)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:298)
+	at java.base/java.util.concurrent.ForkJoinTask.doInvoke(ForkJoinTask.java:413)
+	at java.base/java.util.concurrent.ForkJoinTask.invokeAll(ForkJoinTask.java:850)
+	at edu.coursera.parallel.ReciprocalArraySum.parManyTaskArraySum(ReciprocalArraySum.java:187)
+	at edu.coursera.parallel.ReciprocalArraySumTest.parTestHelper(ReciprocalArraySumTest.java:74)
+	at edu.coursera.parallel.ReciprocalArraySumTest.testParManyTaskTwoMillion(ReciprocalArraySumTest.java:140)
 
-testParManyTaskTwoHundredMillion(edu.coursera.parallel.ReciprocalArraySumTest)  Time elapsed: 26.767 sec  <<< FAILURE!
-junit.framework.AssertionFailedError: It was expected that the many-task parallel implementation would run at least 6.400000x faster, but it only achieved 1.014851x speedup
-	at junit.framework.Assert.fail(Assert.java:47)
-	at junit.framework.Assert.assertTrue(Assert.java:20)
-	at edu.coursera.parallel.ReciprocalArraySumTest.testParManyTaskTwoHundredMillion(ReciprocalArraySumTest.java:155)
+testParManyTaskTwoHundredMillion(edu.coursera.parallel.ReciprocalArraySumTest)  Time elapsed: 7.318 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class java.util.concurrent.locks.AbstractQueuedSynchronizer$ExclusiveNode
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.acquire(AbstractQueuedSynchronizer.java:694)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.acquire(AbstractQueuedSynchronizer.java:937)
+	at java.base/java.util.concurrent.locks.ReentrantLock$Sync.lock(ReentrantLock.java:153)
+	at java.base/java.util.concurrent.locks.ReentrantLock.lock(ReentrantLock.java:322)
+	at java.base/java.util.concurrent.ForkJoinTask.recordExceptionalCompletion(ForkJoinTask.java:479)
+	at java.base/java.util.concurrent.ForkJoinTask.setExceptionalCompletion(ForkJoinTask.java:507)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:298)
+	at java.base/java.util.concurrent.ForkJoinTask.doInvoke(ForkJoinTask.java:413)
+	at java.base/java.util.concurrent.ForkJoinTask.invokeAll(ForkJoinTask.java:850)
+	at edu.coursera.parallel.ReciprocalArraySum.parManyTaskArraySum(ReciprocalArraySum.java:187)
+	at edu.coursera.parallel.ReciprocalArraySumTest.parTestHelper(ReciprocalArraySumTest.java:74)
+	at edu.coursera.parallel.ReciprocalArraySumTest.testParManyTaskTwoHundredMillion(ReciprocalArraySumTest.java:151)
 
